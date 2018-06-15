@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.story {
+	margin: 10px 0px;
+}
+.story-creator {
+  	font-size: 20px;
+  	font-weight: 600;
+}
+.story-content {
+	font-size: 40px;
+}
+.story-comments {
+
+}
+.comment-creator {
+	font-weight: 600;
+}
+
+.feed-container {
+	padding: 1rem 0;
+}
+
+div.circle-avatar{
+	/* make it responsive */
+	max-width: 100%;
+	width:60%;
+	height:auto;
+	display:block;
+	/* div height to be the same as width*/
+	padding-top:60%;
+
+	/* make it a circle */
+	border-radius:50%;
+
+	/* Centering on image`s center*/
+	background-position-y: center;
+	background-position-x: center;
+	background-repeat: no-repeat;
+
+	/* it makes the clue thing, takes smaller dimension to fill div */
+	background-size: cover;
+
+	/* it is optional, for making this div centered in parent*/
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.large-profile-container {
+	padding: 0 35%;
+}
+
+/*
+code below is what I added*/
+
+/*background image*/
+body, html {
+    height: 100%;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("../background.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-attachment: fixed; /*it doesn't scroll with everything else*/
+
+    /*new code*/
+/*    background-color: rgba(200,100,0,.5);*/
+background-color: rgba(46, 54, 25,.75);
+  	background-blend-mode: multiply;
+}
+/*.roompicture {
+	background-image: url("../roompicture.jpg");
+}*/
+
+
+/*landing page stuff*/
+#landingtitle {
+  	font-size: 75px;
+  	font-weight: 550;
+  	color: white;
+}
+#landingsubtitle {
+  	font-size: 23px;
+  	color: white;
+}
+.centerhorandvert {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.grad {
+	/*background:linear-gradient(hsl(200, 60%,70%), hsl(120,60%,70%));*/
+	/*background: linear-gradient(hsl(200, 60%,70%),rgba(25,25,112, .75));*/
+	background-image: url("http://timothykurek.com/wp-content/uploads/2017/09/animating-css-gradients-optical-cortex-on-gradient-background-image.jpg");
+	/*background-image: url("http://hdwpro.com/wp-content/uploads/2017/10/Cool-Space-Background.jpg");*/
+    min-height: 100%;
+    background-attachment: fixed; /*it doesn't scroll with everything else*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background: linear-gradient(rgba(155,193,79,.25),rgba(0,51,25, .75));*/
+}
+
+/*spacing*/
+.header-spacing {
+	margin-left: 10em;
+	margin-top: 3em;
+
+	/*border: solid black 1px;*/
+
+	width: 500px;
+}
+.form-spacing {
+	margin: 3em auto;
+	padding: 1em;
+
+	position:relative;
+	top:-2em;
+	/*border: solid black 1px;*/
+
+	width: 800px;
+
+	-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    		box-sizing: border-box;
+
+}
+.button-spacing{
+	position:relative;
+	top:-20px;
+	left: 65em;
+	width:125px;
+
+	-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    		box-sizing: border-box;
+}
+.card {
+	margin: 3em auto;
+	padding: 1em;
+
+	background-color: white;
+
+	/*color:white;*/
+
+	position:relative;
+	top:-2em;
+	/*border: solid black 1px;*/
+
+	width: 800px;
+
+	border-radius: 7px;
+
+	-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    		box-sizing: border-box;
+
+}
+/*font size*/
+.font-form-size {
+	font-size:30px;
+	font-weight: 600;
+}
+
+.name-font {
+	font-size:200px;
+	text-align: center;
+	padding: 10px;
+
+}
+
+.email-font {
+	color:black;
+	font-size:15px;
+	text-align: center;
+}
+
+.brand-font{
+	font-size: 20px
+	font-weight: 300;
+	color:black;
+}
+
+.centerhor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/*for the photos in roomprofileother / roomprofileown*/
+div.roomphoto {
+	/* make it responsive */
+	width:500px; /* or whatever width you want. */
+   	max-width:500px; /* or whatever width you want. */
+	height:300px;
+	max-height:300px;
+	display:block;
+	overflow: hidden
+	/* div height to be the same as width*/
+/*	padding-top:100%;*/
+
+	/* Centering on image`s center*/
+	background-position-y: center;
+	background-position-x: center;
+	background-repeat: no-repeat;
+
+	/* it makes the clue thing, takes smaller dimension to fill div */
+	background-size: cover;
+
+	/* it is optional, for making this div centered in parent*/
+/*	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;*/
+}
+
+/*for the photos in searchresults.js*/
+div.roomphotocard {
+	/* make it responsive */
+	width:250px; /* or whatever width you want. */
+   	max-width:250px; /* or whatever width you want. */
+	height:150px;
+	max-height:150px;
+	display:block;
+	overflow: hidden
+	/* div height to be the same as width*/
+	padding-top:100%;
+
+	/* Centering on image`s center*/
+	background-position-y: center;
+	background-position-x: center;
+	background-repeat: no-repeat;
+
+	/* it makes the clue thing, takes smaller dimension to fill div */
+	background-size: cover;
+
+	/* it is optional, for making this div centered in parent*/
+/*	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;*/
+}
+
+div.buttonright {
+    float: right;
+    margin-right:10px;
+
+}
+
+.button1 {
+    background-color: #507076; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.instructions {
+    background-color: #507076; /* Green */
+ 	width: 798px;
+ 	position: sticky;
+  	left: 19%;
+  	top: 50%;
+}
