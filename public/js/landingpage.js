@@ -68,16 +68,25 @@ var bottomLine = system.addStave({
 });
 moreSetup(system, topLine, bottomLine);
 
+// voices: [
+//     score.voice(
+//       score.notes('C#5/q, B4')
+//         .concat(score.beam(score.notes('A4/8, E4, C4, D4')))
+//     )
+//   ]
+
 /* Measure2 */
 var system = makeSystem(4);
 var topLine = system.addStave({
   voices: [
-    score.voice(score.notes('D5/8, C5/8, Bb4/8, A4/8,C5/h')),
+  	score.voice( score.notes('')
+        .concat(score.beam(score.notes('D5/8, C5/8, Bb4/8, A4,C5/h',{stem: 'down'})))
+    )
   ]
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('(Bb2 D3 F3 Bb3)/h, (F2 A2 C3)/h', {clef: 'bass'}))
+    score.voice(score.notes('(Bb2 D3 F3 Bb3)/h, (F2 A2 C3)/h', {clef: 'bass'})),
   ]
 });
 moreSetup(system, topLine, bottomLine);
@@ -86,8 +95,10 @@ moreSetup(system, topLine, bottomLine);
 var system = makeSystem(4);
 var topLine = system.addStave({
   voices: [
-    score.voice(score.notes('(C4 E4 G4)/q, E4, F4, G4')),
-    score.voice(score.notes('C4/q., E4/q., A5/q')),
+    score.voice(score.notes('C5/8/r')
+    	.concat(score.beam(score.notes('D5/8, C5, Bb4')))
+    	.concat(score.beam(score.notes('A4, G4, F4, G4')))
+    )
   ]
 });
 var bottomLine = system.addStave({
@@ -101,18 +112,22 @@ moreSetup(system, topLine, bottomLine);
 var system = makeSystem(4);
 var topLine = system.addStave({
   voices: [
-    score.voice(score.notes('(C4 E4 G4)/q, E4, F4, G4')),
-    score.voice(score.notes('C4/q., E4/q., A5/q')),
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('A4/8[id="m4c"], C5/16, A4/8, G#4/16, A4/8[id="m4d"], A4/h[id="m4e"]',{stem: 'up'})))
+    )
   ]
 });
 var bottomLine = system.addStave({
   voices: [
-    // score.voice(score.notes('(F2 A2 C3 F3)/8, C3/16/r, (F2 A2 C3 F3)/8, C3/16/r, (A2 E3 G3 A3)/8[id="m4a"], (A2 E3 G3 A3)/h[id="m4b"]', {clef: 'bass'}))
   score.voice(score.notes('(F2 A2 C3 F3)/8, C3/16/r, (F2 A2 C3 F3)/8, C3/16/r, (A2 E3 G3 A3)/8[id="m4a"], (A2 E3 G3 A3)/h[id="m4b"]', {clef: 'bass'}))
   ]
 });
-registry["index"]["id"]["m4a"]["m4a"]["keys"] = ["A/3"];
+var grace = vf.GraceNote({ keys: ['G/4'], duration: '8', slash: true });
+id('m4c').addModifier(0, vf.GraceNoteGroup({ notes: [grace] }));
+// registry["index"]["id"]["m4a"]["m4a"]["keys"] = ["A/3"]; // tie doesn't work
 vf.StaveTie({ from: id('m4a'), to: id('m4b') });
+vf.StaveTie({ from: grace, to: id('m4c') });
+vf.StaveTie({ from: id('m4d'), to: id('m4e') })
 moreSetup(system, topLine, bottomLine);
 
 vf.draw();
