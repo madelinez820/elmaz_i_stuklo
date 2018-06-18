@@ -3,7 +3,7 @@ function main() {
 const VF = Vex.Flow;
 // Create an SVG renderer and attach it to the DIV element named "boo".
 //TODO: hardcoded
-var vf = new VF.Factory({renderer: {elementId: 'boo', height: 1800, width: 1600 }}); // if not width / tall enough will cut off measures rendered below
+var vf = new VF.Factory({renderer: {elementId: 'boo', height: 2400, width: 1600 }}); // if not width / tall enough will cut off measures rendered below
 var score = vf.EasyScore();
 
 var registry = new VF.Registry(); // this deals with ties
@@ -296,7 +296,12 @@ var topLine = system.addStave({
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('G2/8, Bb2',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('D3/8, G3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('G2/8, Bb2',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('D3/8, G3',{clef: 'bass'})))
+    )
   ]
 });
 moreSetup(system, topLine, bottomLine);
@@ -312,7 +317,12 @@ var topLine = system.addStave({
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('G2/8, C3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('E3/8, G3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('G2/8, C3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('E3/8, G3',{clef: 'bass'})))
+    )
   ]
 });
 moreSetup(system, topLine, bottomLine);
@@ -328,7 +338,12 @@ var topLine = system.addStave({
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('G2/8, Bb2',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('D3/8, G3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('G2/8, Bb2',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('D3/8, G3',{clef: 'bass'})))
+    )
   ]
 });
 moreSetup(system, topLine, bottomLine);
@@ -344,11 +359,76 @@ var topLine = system.addStave({
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('G2/8, C3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('E3/8, G3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('G2/8, C3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('E3/8, G3',{clef: 'bass'})))
+    )
   ]
 });
 moreSetup(system, topLine, bottomLine);
 
+/* Measure18 */
+var system = makeSystem();
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('B4/q/r, Bb4/q, G4/q, B4/q/r'))
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('G2/8, Bb2',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('D3/8, G3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('G2/8, Bb2',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('D3/8, G3',{clef: 'bass'})))
+    )
+  ]
+});
+moreSetup(system, topLine, bottomLine);
+
+/* Measure19 */
+var system = makeSystem();
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('D5/8, C5, C5, Bb4, C5/h')))
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('C3/8, E3',{clef: 'bass', stem:'down'})))
+    	.concat(score.beam(score.notes('G3/8, Bb3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('C3/8, E3',{clef: 'bass', stem:'down'})))
+    	.concat(score.beam(score.notes('G3/8, Bb3',{clef: 'bass', stem:'down'})))
+    )
+  ]
+});
+moreSetup(system, topLine, bottomLine);
+
+/* Measure20 */
+var system = makeSystem();
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('D5/8[id="m20c"], F5/16, D5/8, C#5/16, D5/8[id="m20d"], D5/h[id="m20e"]')))
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+  score.voice(score.notes('(D3 F3 A3 D4)/8, D3/16/r, (D3 F3 A3 D4)/8, D3/16/r, (D3 F#3 A3 C4 D4)/8[id="m20a"], (D3 F#3 A3 C4 D4)/h[id="m20b"]', {clef: 'bass'}))
+  ]
+});
+var grace = vf.GraceNote({ keys: ['C/5'], duration: '8', slash: true });
+id('m20c').addModifier(0, vf.GraceNoteGroup({ notes: [grace] }));
+vf.StaveTie({ from: id('m20a'), to: id('m20b') });
+vf.StaveTie({ from: grace, to: id('m20c') });
+vf.StaveTie({ from: id('m20d'), to: id('m20e') })
+moreSetup(system, topLine, bottomLine);
 
 
 vf.draw(); // renders everything
@@ -374,6 +454,8 @@ main();
 - ties on chords
 - glissando / arpeggiated chords: https://github.com/0xfe/vexflow/issues/83, https://github.com/0xfe/vexflow/issues/29
 - make section ends more like section rather than piece endings
+= add title, arranged by, lyrics, band name
+= add bar markings
 **/
 
 //reference:
