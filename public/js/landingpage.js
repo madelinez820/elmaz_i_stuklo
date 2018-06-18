@@ -11,19 +11,26 @@ VF.Registry.enableDefaultRegistry(registry);
 function id(id) { return registry.getElementById(id); }
 
 var totalNumBars = 0;
+var endofCurrentLine = 0;
 var row = 1;
 var column = 0;
+var currentNumBarsInRow;
 
 function makeSystem(numBarsInRow = 3) {
 	totalNumBars += 1;
-	if ((column + 1) > numBarsInRow){ // starting new row
-		 column = 1;
-		 row += 1;
+	if (totalNumBars == 1){
+		currentNumBarsInRow = numBarsInRow;
 	}
-	else{
-		column += 1;
+	column += 1;
+	if (column > currentNumBarsInRow){ // starting new row
+		currentNumBarsInRow = numBarsInRow;
+		column = 1;
+		row += 1;
 	}
-	
+
+	console.log("This is the current row: " + row);
+	console.log("This is the current column: " + column);
+
 	var width = 1200 / numBarsInRow; // TODO: 1200 is hardcoded
 	var height = 300; // TODO: hardcoded
 
@@ -278,17 +285,95 @@ var bottomLine = system.addStave({
 	});
 moreSetup(system, topLine, bottomLine, true);
 
+/* Measure14 */
+var system = makeSystem(4);
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('B4/q/r, Bb4/q, G4/q,')
+    	.concat(score.beam(score.notes('G4/8, Bb4/8',{stem: 'up'})))
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
+  ]
+});
+moreSetup(system, topLine, bottomLine);
+
+/* Measure15 */
+var system = makeSystem(4);
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('D5/8, C5, C5, Bb4, C5/h')))
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
+  ]
+});
+moreSetup(system, topLine, bottomLine);
+
+/* Measure16 */
+var system = makeSystem(4);
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('B4/q/r, Bb4/q, G4/q,')
+    	.concat(score.beam(score.notes('G4/8, Bb4/8',{stem: 'up'})))
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
+  ]
+});
+moreSetup(system, topLine, bottomLine);
+
+/* Measure17 */
+var system = makeSystem(4);
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('D5/8, C5, C5, Bb4, C5/h')))
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
+  ]
+});
+moreSetup(system, topLine, bottomLine);
+
+
 
 vf.draw(); // renders everything
 }
 main();
 
-
+// /* MeasureSample */
+// var system = makeSystem();
+// var topLine = system.addStave({
+//   voices: [
+//     score.voice(score.notes('F5/8, A4/q, A4/8, E5/8, A4/q, A4/8')),
+//   ]
+// });
+// var bottomLine = system.addStave({
+//   voices: [
+//     score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
+//   ]
+// });
+// moreSetup(system, topLine, bottomLine);
 
 /** TODO:
 -unharcode things (resize dynamically)
 - ties on chords
 - glissando / arpeggiated chords: https://github.com/0xfe/vexflow/issues/83, https://github.com/0xfe/vexflow/issues/29
+- make section ends more like section rather than piece endings
 **/
 
 //reference:
