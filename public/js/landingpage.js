@@ -1,9 +1,13 @@
 function main() {
 
+var div = document.getElementById('titlebody');
+div.innerHTML = "Елмаз и Стъкло";
+
+
 const VF = Vex.Flow;
 // Create an SVG renderer and attach it to the DIV element named "boo".
 //TODO: hardcoded
-var vf = new VF.Factory({renderer: {elementId: 'boo', height: 6000, width: 1600 }}); // if not width / tall enough will cut off measures rendered below
+var vf = new VF.Factory({renderer: {elementId: 'musicbody', height: 5000, width: 1600 }}); // if not width / tall enough will cut off measures rendered below
 var score = vf.EasyScore();
 
 var registry = new VF.Registry(); // this deals with ties
@@ -48,6 +52,7 @@ function moreSetup (system, topLine, bottomLine, endSection = false){
 	}
 	if (endSection) {
 		system.addConnector('boldDoubleRight');
+		// system.addConnector('doubleRight');
 	}
 	if (totalNumBars == 1) { // add tempo marking to first bar
 		topLine.setTempo({ name: 'Andante', duration: 'q', dots: 0, bpm: 87 }, -30).addTimeSignature('4/4');;
@@ -149,8 +154,9 @@ moreSetup(system, topLine, bottomLine);
 var system = makeSystem();
 var topLine = system.addStave({
   voices: [
-  	score.voice( score.notes('')
-        .concat(score.beam(score.notes('D5/8, C5/8, Bb4/8, A4', {stem: 'down'})))
+  	score.voice( score.notes('D5/8')
+        .concat(score.beam(score.notes('C5/8, Bb4/8', {stem: 'down'})))
+        .concat(score.notes('A4'))
         .concat(score.notes('A4/8[id="m6a"], C5/q.[id="m6b"]',{stem: 'down'}))
     )
   ]
@@ -167,8 +173,8 @@ moreSetup(system, topLine, bottomLine);
 var system = makeSystem();
 var topLine = system.addStave({
   voices: [
-    score.voice(score.notes('B4/8/r')
-    	.concat(score.beam(score.notes('D5/8, C5, Bb4')))
+    score.voice(score.notes('B4/8/r, D5/8')
+    	.concat(score.beam(score.notes('C5, Bb4')))
     	.concat(score.beam(score.notes('A4, G4, F4, G4')))
     )
   ]
@@ -200,6 +206,7 @@ var bottomLine = system.addStave({
 var grace = vf.GraceNote({ keys: ['G/4'], duration: '8', slash: true });
 id('m8c').addModifier(0, vf.GraceNoteGroup({ notes: [grace] }));
 vf.StaveTie({ from: grace, to: id('m8c') });
+vf.StaveTie({ from: id('m8d'), to: id('m8e') });
 moreSetup(system, topLine, bottomLine);
 
 
@@ -220,12 +227,12 @@ moreSetup(system, topLine, bottomLine);
 /* Measure10 */
 var system = makeSystem();
 var topLine = system.addStave({
-	  voices: [
-	  	score.voice( score.notes('')
-	        .concat(score.beam(score.notes('D5/8, C5/8, Bb4/8, A4', {stem: 'down'})))
-	        .concat(score.notes('C5/h',{stem: 'down'}))
-	    )
-	  ]
+  voices: [
+  	score.voice( score.notes('D5/8')
+        .concat(score.beam(score.notes('C5/8, Bb4/8',{stem: 'down'})))
+        .concat(score.notes('A4,C5/h'))
+    )
+  ]
 	});
 var bottomLine = system.addStave({
 	  voices: [
@@ -1174,7 +1181,6 @@ main();
 
 /** TODO:
 -unharcode things (resize dynamically)
-- ties on chords
 - glissando / arpeggiated chords: https://github.com/0xfe/vexflow/issues/83, https://github.com/0xfe/vexflow/issues/29
 - make section ends more like section rather than piece endings
 = add title, arranged by, lyrics, band name
