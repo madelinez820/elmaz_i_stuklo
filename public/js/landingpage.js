@@ -1047,23 +1047,130 @@ var bottomLine = system.addStave({
 });
 moreSetup(system, topLine, bottomLine);
 
+/* Measure50 */
+var system = makeSystem();
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('Bb5/q., G5/8[id="m50a"], G5/h[id="m50b"]')),
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('')
+    	.concat(score.notes('C3/8, E3',{clef: 'bass'}))
+    	.concat(score.beam(score.notes('(G3 Bb3)/8, E3',{clef: 'bass'})))
+    	.concat(score.beam(score.notes('C3/8, E3',{clef: 'bass',stem:'down'})))
+    	.concat(score.beam(score.notes('G3/8, C4',{clef: 'bass', stem:'down'})))
+    )
+  ]
+});
+vf.StaveTie({ from: id('m50a'), to: id('m50b') });
+moreSetup(system, topLine, bottomLine);
+
+/* Measure51 */
+var system = makeSystem();
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('')
+    	.concat(score.beam(score.notes('C5/8, Bb4')))
+    	.concat(score.beam(score.notes('C5/8, Bb4')))
+    	.concat(score.beam(score.notes('C5/8, D5')))
+    	.concat(score.notes('B4/q/r'))
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('(C3 E3 G3 Bb3)/q, D3/q/r, D3/h/r', {clef:'bass'}))
+  ]
+});
+moreSetup(system, topLine, bottomLine);
+
+/* Measure52 */
+var system = makeSystem();
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('D5/q, B4/q/r, C5/q')
+    	.concat(score.beam(score.notes('C5/8, Bb4[id="m52a"]')))
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('(G2 Bb2 D3)/q, D3/q/r, (A2 C3 D3)/h', {clef: 'bass'})),
+  ]
+});
+moreSetup(system, topLine, bottomLine);
+
+// /* Measure53 */
+var system = makeSystem(4);
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('Bb4/h.[id="m53a"], B4/q/r')
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('(Bb2 D3 G3 Bb3)/h., D3/q/r', {clef: 'bass'})
+    )
+  ]
+});
+vf.StaveTie({ from: id('m52a'), to: id('m47a') });
+vf.StaveTie({ from: id('m47a'), to: id('m53a') });
+moreSetup(system, topLine, bottomLine);
+
+/* Measure54 */
+var system = makeSystem(4);
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('G4/q, B4/q/r, A4/q')
+    	.concat(score.beam(score.notes('A4/8, D5[id="m54a"]', {stem: 'down'})))
+    )
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('(G2 Bb2 D3)/q, D3/q/r, (A2 C3 D3)/q, D3/8/r, (D3 F#3 A3 C4 D4)/8[id="m54b"]', {clef: 'bass'})),
+  ]
+});
+moreSetup(system, topLine, bottomLine);
+
+// /* Measure55 */
+var system = makeSystem(4);
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('D5/h.[id="m55a"], B4/q/r'))
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('(D3 F#3 A3 C4 D4)/h.[id="m55b"], D3/q/r', {clef: 'bass'})
+    )
+  ]
+});
+vf.StaveTie({ from: id('m54a'), to: id('m55a') });
+vf.StaveTie({ from: id('m54b'), to: id('m55b') });
+moreSetup(system, topLine, bottomLine);
+
+var system = makeSystem(4);
+var topLine = system.addStave({
+  voices: [
+    score.voice(score.notes('(G3 Bb3 D4 G4)/w')),
+  ]
+});
+var bottomLine = system.addStave({
+  voices: [
+    score.voice(score.notes('(G2 Bb2 D3 G3)/w', {clef: 'bass'})),
+  ]
+});
+moreSetup(system, topLine, bottomLine, true);
+
+
 vf.draw(); // renders everything
 }
 main();
 
-/* MeasureSample */
-// var system = makeSystem(4);
-// var topLine = system.addStave({
-//   voices: [
-//     score.voice(score.notes('F5/8, A4/q, A4/8, E5/8, A4/q, A4/8')),
-//   ]
-// });
-// var bottomLine = system.addStave({
-//   voices: [
-//     score.voice(score.notes('D3/8/r, D3/8, (F3 A3 D4)/q, D3/8/r, A2/8, (C3 E3 G3)/q', {clef: 'bass'})),
-//   ]
-// });
-// moreSetup(system, topLine, bottomLine);
 
 /** TODO:
 -unharcode things (resize dynamically)
