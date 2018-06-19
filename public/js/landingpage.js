@@ -42,7 +42,7 @@ function makeSystem(numBarsInRow = 3) {
 
     return system;
 }
-function moreSetup (system, topLine, bottomLine, endSection = false){
+function moreSetup (system, topLine, bottomLine, endSection = false, endPiece = false){
 	system.addConnector("singleRight");
 	if (column == 1){ // first measure in row, add clef signs and time
 		topLine.addClef('treble');
@@ -51,8 +51,10 @@ function moreSetup (system, topLine, bottomLine, endSection = false){
 		system.addConnector("singleLeft");
 	}
 	if (endSection) {
+		system.addConnector(7);
+	}
+	if (endPiece){
 		system.addConnector('boldDoubleRight');
-		// system.addConnector('doubleRight');
 	}
 	if (totalNumBars == 1) { // add tempo marking to first bar
 		topLine.setTempo({ name: 'Andante', duration: 'q', dots: 0, bpm: 87 }, -30).addTimeSignature('4/4');;
@@ -1171,7 +1173,7 @@ var bottomLine = system.addStave({
     score.voice(score.notes('(G2 Bb2 D3 G3)/w', {clef: 'bass'})),
   ]
 });
-moreSetup(system, topLine, bottomLine, true);
+moreSetup(system, topLine, bottomLine, false, true);
 
 
 vf.draw(); // renders everything
@@ -1184,11 +1186,11 @@ main();
 - glissando / arpeggiated chords: https://github.com/0xfe/vexflow/issues/83, https://github.com/0xfe/vexflow/issues/29
 - make section ends more like section rather than piece endings
 = add title, arranged by, lyrics, band name
-= add bar markings
 -accidentally made some flats neutral; fix those
 **/
 
 //reference:
 //http://public.vexflow.com/build/vexflow-tests.js
+//https://github.com/0xfe/vexflow/issues/470 (http://public.vexflow.com/tests/)
 //https://github.com/0xfe/vexflow/issues/471
 //http://public.vexflow.com/build/vexflow-tests.js
