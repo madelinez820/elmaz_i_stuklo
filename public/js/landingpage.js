@@ -131,10 +131,9 @@ var bottomLine = system.addStave({
 });
 var grace = vf.GraceNote({ keys: ['G/4'], duration: '8', slash: true });
 id('m4c').addModifier(0, vf.GraceNoteGroup({ notes: [grace] }));
-// registry["index"]["id"]["m4a"]["m4a"]["keys"] = ["A/3"]; // tie doesn't work
 vf.StaveTie({ from: id('m4a'), to: id('m4b') });
 vf.StaveTie({ from: grace, to: id('m4c') });
-vf.StaveTie({ from: id('m4d'), to: id('m4e') })
+vf.StaveTie({ from: id('m4d'), to: id('m4e') });
 moreSetup(system, topLine, bottomLine);
 
 /* Measure5 */
@@ -146,9 +145,13 @@ var topLine = system.addStave({
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('(D3 F3 A3 D4)/h, (A2 C3 E3 G3)/h', {clef: 'bass', stem: 'down'}))
+    score.voice(score.notes('(D3 F3 A3 D4)/h[id="m5a"], (A2 C3 E3 G3)/h[id="m5b"]', {clef: 'bass', stem: 'down'}))
   ]
 });
+var stroke1 = new VF.Stroke(3);
+id('m5a').addStroke(0, stroke1);
+var stroke2 = new VF.Stroke(3);
+id('m5b').addStroke(0, stroke2);
 moreSetup(system, topLine, bottomLine);
 
 
@@ -165,10 +168,14 @@ var topLine = system.addStave({
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('(Bb2 D3 F3 Bb3)/h, (F2 A2 C3 F3)/h', {clef: 'bass'})),
+    score.voice(score.notes('(Bb2 D3 F3 Bb3)/h[id="m6c"], (F2 A2 C3 F3)/h[id="m6d"]', {clef: 'bass'})),
   ]
 });
-vf.StaveTie({ from: id('m6a'), to: id('m6b') })
+vf.StaveTie({ from: id('m6a'), to: id('m6b') });
+var stroke3 = new VF.Stroke(3);
+id('m6c').addStroke(0, stroke3);
+var stroke4 = new VF.Stroke(3);
+id('m6d').addStroke(0, stroke4);
 moreSetup(system, topLine, bottomLine);
 
 /* Measure7 */
@@ -183,9 +190,13 @@ var topLine = system.addStave({
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('(G2 Bb2 D3 G3)/h, (F2 A2 C3 F3)/h', {clef: 'bass'}))
+    score.voice(score.notes('(G2 Bb2 D3 G3)/h[id="m7a"], (F2 A2 C3 F3)/h[id="m7b"]', {clef: 'bass'}))
   ]
 });
+var stroke5 = new VF.Stroke(3);
+id('m7a').addStroke(0, stroke5);
+var stroke6 = new VF.Stroke(3);
+id('m7b').addStroke(0, stroke6);
 moreSetup(system, topLine, bottomLine);
 
 /* Measure8 */
@@ -768,9 +779,11 @@ var topLine = system.addStave({
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('(C3 Eb3 G3 C4)/w', {clef: 'bass'})),
+    score.voice(score.notes('(C3 Eb3 G3 C4)/w[id="m35a"]', {clef: 'bass'})),
   ]
 });
+var stroke7 = new VF.Stroke(3);
+id('m35a').addStroke(0, stroke7);
 moreSetup(system, topLine, bottomLine);
 
 // /* Measure36 */
@@ -925,11 +938,13 @@ var topLine = system.addStave({
 });
 var bottomLine = system.addStave({
   voices: [
-    score.voice(score.notes('(C3 G3 C4)/h.', {clef: 'bass'})
+    score.voice(score.notes('(C3 G3 C4)/h.[id="m43a"]', {clef: 'bass'})
     	.concat(score.notes('D3/q/r', {clef: 'bass'}))
     )
   ]
 });
+var stroke8 = new VF.Stroke(3);
+id('m43a').addStroke(0, stroke8);
 moreSetup(system, topLine, bottomLine);
 
 /* Measure44 */
@@ -1176,6 +1191,8 @@ var bottomLine = system.addStave({
 moreSetup(system, topLine, bottomLine, false, true);
 
 
+
+
 vf.draw(); // renders everything
 }
 main();
@@ -1184,9 +1201,8 @@ main();
 /** TODO:
 -unharcode things (resize dynamically)
 - glissando / arpeggiated chords: https://github.com/0xfe/vexflow/issues/83, https://github.com/0xfe/vexflow/issues/29
-- make section ends more like section rather than piece endings
 = add title, arranged by, lyrics, band name
--accidentally made some flats neutral; fix those
+- make it play sound? try vextab
 **/
 
 //reference:
