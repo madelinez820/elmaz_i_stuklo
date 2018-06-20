@@ -1,7 +1,5 @@
 function main() {
 
-var div = document.getElementById('titlebody');
-div.innerHTML = "Елмаз и Стъкло";
 
 
 const VF = Vex.Flow;
@@ -57,7 +55,7 @@ function moreSetup (system, topLine, bottomLine, endSection = false, endPiece = 
 		system.addConnector('boldDoubleRight');
 	}
 	if (totalNumBars == 1) { // add tempo marking to first bar
-		topLine.setTempo({ name: 'Andante', duration: 'q', dots: 0, bpm: 87 }, -30).addTimeSignature('4/4');;
+		topLine.setTempo({ duration: 'q', dots: 0, bpm: 87 }, -30).addTimeSignature('4/4');;
 		bottomLine.addTimeSignature('4/4');
 	}
 }
@@ -1200,13 +1198,6 @@ main();
 
 /** TODO:
 -unharcode things (resize dynamically)
-- glissando / arpeggiated chords: https://github.com/0xfe/vexflow/issues/83, https://github.com/0xfe/vexflow/issues/29
 = add title, arranged by, lyrics, band name
 - make it play sound? try vextab
 **/
-
-//reference:
-//http://public.vexflow.com/build/vexflow-tests.js
-//https://github.com/0xfe/vexflow/issues/470 (http://public.vexflow.com/tests/)
-//https://github.com/0xfe/vexflow/issues/471
-//http://public.vexflow.com/build/vexflow-tests.js

@@ -4,11 +4,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
-/*#boo{
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-}*/
 
-#titlebody{
-}
+
+/*.titletext{
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}*/
