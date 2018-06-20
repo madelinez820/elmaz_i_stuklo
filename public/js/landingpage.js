@@ -5,7 +5,8 @@ function main() {
 const VF = Vex.Flow;
 // Create an SVG renderer and attach it to the DIV element named "boo".
 //TODO: hardcoded
-var vf = new VF.Factory({renderer: {elementId: 'musicbody', height: 5000, width: 1600 }}); // if not width / tall enough will cut off measures rendered below
+var width = document.getElementById("musicbody").offsetWidth; // width of div
+var vf = new VF.Factory({renderer: {elementId: 'musicbody', height: 5000, width: width }}); // if not width / tall enough will cut off measures rendered below
 var score = vf.EasyScore();
 
 var registry = new VF.Registry(); // this deals with ties
@@ -30,13 +31,13 @@ function makeSystem(numBarsInRow = 3) {
 		row += 1;
 	}
 
-	var width = 1200 / numBarsInRow; // TODO: 1200 is hardcoded
-	var height = 300; // TODO: hardcoded
+	var widthBar = 1160 / numBarsInRow; // TODO: 1200 is hardcoded
+	var heightBar = 300; // TODO: hardcoded
 
-	var x = 30 + (column - 1) * width; // how far is it from top left corner
-	var y = 80 + (row - 1) * height; 
+	var x = 30 + (column - 1) * widthBar; // how far is it from top left corner
+	var y = 80 + (row - 1) * heightBar; 
 	var space = 15;
-    var system = vf.System({ x: x, y: y, width: width, spaceBetweenStaves: space});
+    var system = vf.System({ x: x, y: y, width: widthBar, spaceBetweenStaves: space});
 
     return system;
 }
@@ -1198,6 +1199,6 @@ main();
 
 /** TODO:
 -unharcode things (resize dynamically)
-= add title, arranged by, lyrics, band name
+= add lyrics
 - make it play sound? try vextab
 **/
