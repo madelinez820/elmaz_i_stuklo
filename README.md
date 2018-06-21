@@ -2,7 +2,7 @@
 
 Piano arrangement of Elmaz i Stuklo (Елмаз и стъкло) using Javascript (VexFlow). <br/>
 
-I arranged this because I was bored, wanted to sing Елмаз и стъкло and play the piano to accompany it, but I couldn't find any piano renditions. Hope you find this useful if you're in the same boat as I was :)
+I arranged this because I was bored and wanted to sing Елмаз и стъкло and play the piano to accompany it, but I couldn't find any piano renditions. Hope you find this useful if you're in the same boat as I was :)
 
 ## How to view
 ```
