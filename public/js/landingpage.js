@@ -1233,6 +1233,13 @@ addLyricLine("във ве-щи със сър - ца" +s+s+s+s+s+s+s+s+s+s+s+s+s+
 addLyricLine(s+s+s+s+s+ "Пре- вър - нат " +s+ "съм " +s+ "на" +s+ " - " +s+ "пук " +s+ "в кри - стал - но" +s+s+s+ " о " +s+s+ "- " +s+s+ "гле - да - ло"+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
 	"в без-ро"+s+"-"+s+"пот-но "+s+"стъ - кло");
 
+addLyricLine(s+s+s+s+s+s+s+s+ "Oo" +s+s+ "-" +s+s+ "oo " +s+s+s+ "но " +s+s+ "дос - та - тъч-но " +s+s+ "би - ло" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
+	 "Oo" +s+s+ "-" +s+s+ "oo " +s+s+s+ "ка-то"+s+s+s+" ел"+s+"-"+s+"маз "+s+s+s+"и "+s+s+s+"стъ - кло");
+
+addLyricLine("да се о - гле - да тя " +
+	"за " +s+s+ "да я " +s+s+s+s+s+s+ "вид - я " +s+s+s+ "аз"  +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
+	"Без " +s+s+ "да " +s+s+s+s+ "мо " +s+s+s+s+s+s+s+ "-" +s+s+s+s+s+s+s+ " га"
+	);
 vf.draw(); // renders everything
 }
 main();
