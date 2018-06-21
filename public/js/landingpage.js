@@ -1214,7 +1214,7 @@ addLyricLine(s+s+s+ "Там " +s+s+s+ "на " +s+s+ "хъл-ма" +s+s+ "в " +s
 addLyricLine(s+"Там" +s+s+s+s+s+s+s+s+" от " +s+s+ "-" +s+s+ "дав" +s+ " - " +s+ "на " +s+s+s+s+s+ "жи" +s+s+s+s+ "-" +s+s+s+s+"вее" +s+s+s+ "-" +s+s+s+ "ла " +s+s+s+s+ "са" +s+s+"-" +s+s+"ма" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s
 	+"жес - то - ка" +s+s+s+s+s+s+" но " +s+s+"прек-рас - на");
 
-addLyricLine("кра-си - ва-та " +s+s+s+"же - на " +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "Нощ - ем " +s+s+s+s+s+s+s+ "в" +s+s+s+s+s+ "мра - ка" +s+s+s+s+s+s+s+s+s+ "в" +s+s+s+s+s+s+s+ "плен" +s+ "на" +s+s+s+s+s+ "са" +s+ "-" +s+ "мо" +s+s+ "-" +s+s+"та");
+addLyricLine("кра-си - ва-та " +s+s+s+"же - на " +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "Но - щем " +s+s+s+s+s+s+s+ "в" +s+s+s+s+s+ "мра - ка" +s+s+s+s+s+s+s+s+s+ "в" +s+s+s+s+s+s+s+ "плен" +s+ "на" +s+s+s+s+s+ "са" +s+ "-" +s+ "мо" +s+s+ "-" +s+s+"та");
 
 addLyricLine(s+s+s+s+s+ "аз " +s+s+s+ "ча" +s+s+ "-" +s+ "кам " +s+s+ "да " +s+s+ "я " +s+s+s+ "ви - дя" +s+s+s+s+ "но " +s+s+s+s+ "не " +s+ "ча" +s+s+ "-" +s+s+ "ка" +s+s+s+s+ "тя" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "но " +s+s+s+ "не " +s+ "ча" +s+ "-" +s+ "ка " +s+s+ "тя");
 
@@ -1223,6 +1223,15 @@ addLyricLine(s+s+s+s+s+s+s+s+ "Oo" +s+s+ "-" +s+s+ "oo " +s+s+s+ "но " +s+s+ "
 
 addLyricLine(s+s+s+s+s+s+s+s+s+s+ "Oo" +s+s+s+ "-" +s+s+s+ "oo " +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "да "+s+s+ "за" +s+ "-" +s+ "ста" +s+s+ "-" +s+s+ "не " +s+s+ " тя" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
 	"за " +s+ "да" +s+ " я" +s+ " ви" +s+s+ "-" +s+s+ " дя" +s+s+s+s+s+  " аз");
+
+addLyricLine(s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "Тя " +s+s+s+s+s+s+s+s+ "със " +s+ " сво - я" +s+ " стра-нен " +s+s+s+ "по - глед е" +s+s+s+ " мо"+s+ "-" +s+"гла" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
+	"да" +s+s+ "прев-ръ-ща" +s+ "хо-ра");
+
+addLyricLine("във ве-щи със сър - ца" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
+	"И" +s+s+s+s+s+ " е - то" +s+s+s+s+s+s+s+s+s+s+ " и " +s+s+s+s+ "аз" +s+s+" съм тук " +s+s+s+s+ "в ру "+s+s+"-"+s+s+"би - не" +s+s+ "-" +s+s+ "на - " +s+s+s+ "та "+s+s+s+"ку - ла");
+
+addLyricLine(s+s+s+s+s+ "Пре- вър - нат " +s+ "съм " +s+ "на" +s+ " - " +s+ "пук " +s+ "в кри - стал - но" +s+s+s+ " о " +s+s+ "- " +s+s+ "гле - да - ло"+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
+	"в без-ро"+s+"-"+s+"пот-но "+s+"стъ - кло");
 
 vf.draw(); // renders everything
 }
