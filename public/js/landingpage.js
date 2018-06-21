@@ -1240,13 +1240,22 @@ addLyricLine("да се о - гле - да тя " +
 	"за " +s+s+ "да я " +s+s+s+s+s+s+ "вид - я " +s+s+s+ "аз"  +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
 	"Без " +s+s+ "да " +s+s+s+s+ "мо " +s+s+s+s+s+s+s+ "-" +s+s+s+s+s+s+s+ " га"
 	);
+
+addLyricLine("о - бич " +s+s+ "да" +s+s+ " по" +s+s+ "-" +s+s+ "лу - ча " +s+s+s+s+s+ "аз" +s+s+ " жи" +s+s+ "-" +s+s+ "ве" +s+s+s+s+s+s+s+ "-" +s+s+s+s+s+s+s+ "я" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ " ка - то" +s+s+s+s+" пти "+s+s+s+"- "+s+s+s+"ца без "+s+"кри - ле "+s+s+s+s+s+s+s+s+"и"+s+s+"нав");
+
+addLyricLine("яр" +s+s+s+s+ "-" +s+s+s+s+ "но" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ " ня - ма" +s+" да " +s+s+s+ "спо - лу - чиш " +s+s+s+s+s+s+s+s+
+	"ти " +s+s+s+s+s+s+s+s+s+s+ "мое " +s+s+s+s+ "сър - це "+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
+	"Без " +s+s+ "да ");
+
+addLyricLine("мо " +s+s+s+s+s+s+s+ "-" +s+s+s+s+s+s+s+ " га "+s+s+s+s+s+s+s+s+s+s+s+
+	"о-бич " +s+ "да" +s+ " по" +s+s+ "-" +s+s+ "лу - ча " +s+ "аз" +s+s+ " жи" +s+ "-" +s+ "ве" +s+s+s+s+s+s+ "-" +s+s+s+s+s+s+ "я" +s+s+s+s+s+s+s+s+s+s+s+ " ка - то" +s+s+s+" пти - ца "+s+"без "+s+"кри-ле "+s+s+s+s+"и "+s+"нав");
+
+addLyricLine("яр" +s+s+s+s+s+s+s+s+ "-" +s+s+s+s+s+s+s+s+ "но" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ " ня"+s+s+"-" +s+s+ "ма" +s+s+s+" да " +s+s+s+ "спо"+s+" - "+s+"лу - чиш " +s+s+s+s+s+s+s+s+s+s+s+s+s+
+	"ти " +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "мое " +s+s+s+s+s+s+s+ "сър " +s+s+ "- " +s+s+ "це "
+	);
+
+addLyricLine(s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+"ти " +s+s+s+s+s+s+s+s+s+ "мое " +s+s+s+ "сър " +s+s+ "- " +s+s+ "це ");
+
 vf.draw(); // renders everything
 }
 main();
-
-
-/** TODO:
--unharcode things (resize dynamically) maybe?
-= add lyrics
-- make it play sound maybe? try vextab
-**/
