@@ -3,8 +3,7 @@ function main() {
 
 
 const VF = Vex.Flow;
-// Create an SVG renderer and attach it to the DIV element named "boo".
-//TODO: hardcoded
+
 var width = document.getElementById("musicbody").offsetWidth; // width of div
 var vf = new VF.Factory({renderer: {elementId: 'musicbody', height: 5000, width: width }}); // if not width / tall enough will cut off measures rendered below
 var score = vf.EasyScore();
@@ -18,6 +17,7 @@ var endofCurrentLine = 0;
 var row = 1;
 var column = 0;
 var currentNumBarsInRow;
+var lyricCount = 1;
 
 function makeSystem(numBarsInRow = 3) {
 	totalNumBars += 1;
@@ -31,8 +31,8 @@ function makeSystem(numBarsInRow = 3) {
 		row += 1;
 	}
 
-	var widthBar = 1160 / numBarsInRow; // TODO: 1200 is hardcoded
-	var heightBar = 300; // TODO: hardcoded
+	var widthBar = 1160 / numBarsInRow; 
+	var heightBar = 300; 
 
 	var x = 30 + (column - 1) * widthBar; // how far is it from top left corner
 	var y = 80 + (row - 1) * heightBar; 
@@ -59,6 +59,21 @@ function moreSetup (system, topLine, bottomLine, endSection = false, endPiece = 
 		topLine.setTempo({ duration: 'q', dots: 0, bpm: 87 }, -30).addTimeSignature('4/4');;
 		bottomLine.addTimeSignature('4/4');
 	}
+}
+
+function addLyricLine(lyric){
+	var heightBar = 300; 
+	var lyricLine = document.createElement("div");
+	lyricLine.innerHTML = lyric;
+	document.body.appendChild(lyricLine);
+	lyricLine.style.position = "absolute";
+	lyricLine.style.left = "120px";
+	lyricLine.style.fontWeight = 550;
+
+	var height = 40 + heightBar * lyricCount;
+	lyricLine.style.top = height + "px";
+	lyricCount += 1;
+
 }
 
 
@@ -281,10 +296,11 @@ var topLine = system.addStave({
 	});
 var bottomLine = system.addStave({
 	voices: [
-	  score.voice(score.notes('(F2 A2 C3 F3)/8, D3/16/r, (F2 A2 C3 F3)/8, D3/16/r, (A2 E3 G3 A3)/8[id="m12a"], (A2 E3 G3 A3)/h[id="m12b"]', {clef: 'bass'}))
+	  score.voice(score.notes('(F2 A2 C3 F3)/8, D3/16/r, (F2 A2 C3 F3)/8, D3/16/r, (A2 E3 G3 A3)/8[id="m12c"], (A2 E3 G3 A3)/h[id="m12d"]', {clef: 'bass'}))
 	  ]
 	});
 vf.StaveTie({ from: id('m12a'), to: id('m12b') });
+vf.StaveTie({ from: id('m12c'), to: id('m12d') });
 moreSetup(system, topLine, bottomLine);
 
 /* Measure13 */
@@ -1189,8 +1205,18 @@ var bottomLine = system.addStave({
 });
 moreSetup(system, topLine, bottomLine, false, true);
 
+//adding lyrics 
+var s = "&nbsp ";
 
+addLyricLine(s+s+s+ "Там " +s+s+s+ "на " +s+s+ "хъл-ма" +s+s+ "в " +s+ "лъ " +s+ "- чис - ти" +s+s+s+s+ " не - бе" +s+" - " +s+"са"+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s
+			+"ру - би" +s+ "-" +s+ "не - на - та" +s+s+ "ку - ла" +s+s+s+"из - ди - га - ше" +s+s+s+" сна - га");
 
+addLyricLine(s+"Там" +s+s+s+s+s+s+s+s+" от " +s+s+ "-" +s+s+ "дав" +s+ " - " +s+ "на " +s+s+s+s+s+ "жи" +s+s+s+s+ "-" +s+s+s+s+"вее" +s+s+s+ "-" +s+s+s+ "ла " +s+s+s+s+ "са" +s+s+"-" +s+s+"ма" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s
+	+"жес - то - ка" +s+s+s+s+s+s+" но " +s+s+"прек-рас - на");
+
+addLyricLine("кра-си - ва-та " +s+s+s+"же - на " +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "Нощ - ем " +s+s+s+s+s+s+s+ "в" +s+s+s+s+s+ "мра - ка" +s+s+s+s+s+s+s+s+s+ "в" +s+s+s+s+s+s+s+ "плен" +s+ "на" +s+s+s+s+s+ "са" +s+ "-" +s+ "мо" +s+s+ "-" +s+s+"та")
+
+addLyricLine(s+s+s+s+s+ "аз " +s+s+s+ "ча" +s+s+ "-" +s+ "кам " +s+s+ "да " +s+s+ "я " +s+s+s+ "ви - дя" +s+s+s+s+ "но " +s+s+s+s+ "не " +s+ "ча" +s+s+ "-" +s+s+ "ка" +s+s+s+s+ "тя" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "но " +s+s+s+ "не " +s+ "ча" +s+ "-" +s+ "ка " +s+s+ "тя");
 
 vf.draw(); // renders everything
 }
@@ -1198,7 +1224,7 @@ main();
 
 
 /** TODO:
--unharcode things (resize dynamically)
+-unharcode things (resize dynamically) maybe?
 = add lyrics
-- make it play sound? try vextab
+- make it play sound maybe? try vextab
 **/
