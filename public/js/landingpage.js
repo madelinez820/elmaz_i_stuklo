@@ -1214,9 +1214,15 @@ addLyricLine(s+s+s+ "Там " +s+s+s+ "на " +s+s+ "хъл-ма" +s+s+ "в " +s
 addLyricLine(s+"Там" +s+s+s+s+s+s+s+s+" от " +s+s+ "-" +s+s+ "дав" +s+ " - " +s+ "на " +s+s+s+s+s+ "жи" +s+s+s+s+ "-" +s+s+s+s+"вее" +s+s+s+ "-" +s+s+s+ "ла " +s+s+s+s+ "са" +s+s+"-" +s+s+"ма" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s
 	+"жес - то - ка" +s+s+s+s+s+s+" но " +s+s+"прек-рас - на");
 
-addLyricLine("кра-си - ва-та " +s+s+s+"же - на " +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "Нощ - ем " +s+s+s+s+s+s+s+ "в" +s+s+s+s+s+ "мра - ка" +s+s+s+s+s+s+s+s+s+ "в" +s+s+s+s+s+s+s+ "плен" +s+ "на" +s+s+s+s+s+ "са" +s+ "-" +s+ "мо" +s+s+ "-" +s+s+"та")
+addLyricLine("кра-си - ва-та " +s+s+s+"же - на " +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "Нощ - ем " +s+s+s+s+s+s+s+ "в" +s+s+s+s+s+ "мра - ка" +s+s+s+s+s+s+s+s+s+ "в" +s+s+s+s+s+s+s+ "плен" +s+ "на" +s+s+s+s+s+ "са" +s+ "-" +s+ "мо" +s+s+ "-" +s+s+"та");
 
 addLyricLine(s+s+s+s+s+ "аз " +s+s+s+ "ча" +s+s+ "-" +s+ "кам " +s+s+ "да " +s+s+ "я " +s+s+s+ "ви - дя" +s+s+s+s+ "но " +s+s+s+s+ "не " +s+ "ча" +s+s+ "-" +s+s+ "ка" +s+s+s+s+ "тя" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "но " +s+s+s+ "не " +s+ "ча" +s+ "-" +s+ "ка " +s+s+ "тя");
+
+addLyricLine(s+s+s+s+s+s+s+s+ "Oo" +s+s+ "-" +s+s+ "oo " +s+s+s+ "но " +s+s+ "дос - та - тъч-но " +s+s+ "би - ло" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
+	 "Oo" +s+s+ "-" +s+s+ "oo " + s+s+s+s+s+ "зад" +s+s+ "ви - со - ко - то" +s+s+s+ " стък-ло");
+
+addLyricLine(s+s+s+s+s+s+s+s+s+s+ "Oo" +s+s+s+ "-" +s+s+s+ "oo " +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+ "да "+s+s+ "за" +s+ "-" +s+ "ста" +s+s+ "-" +s+s+ "не " +s+s+ " тя" +s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+s+
+	"за " +s+ "да" +s+ " я" +s+ " ви" +s+s+ "-" +s+s+ " дя" +s+s+s+s+s+  " аз");
 
 vf.draw(); // renders everything
 }
