@@ -69,6 +69,7 @@ function addLyricLine(lyric){
 	lyricLine.style.position = "absolute";
 	lyricLine.style.left = "120px";
 	lyricLine.style.fontWeight = 550;
+  lyricLine.style.width = width + "px";
 
 	var height = 40 + heightBar * lyricCount;
 	lyricLine.style.top = height + "px";
