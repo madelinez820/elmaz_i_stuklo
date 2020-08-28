@@ -4,7 +4,6 @@ require('dotenv').config();
 // libraries
 const http = require('http');
 const express = require('express');
-const session = require('express-session');
 const cors = require('cors');
 const socketio = require('socket.io');
 
@@ -16,16 +15,9 @@ const api = require('./routes/api');
 // initialize express app
 const app = express();
 
-
 // enable Cross Origin Requests (CORS)
 app.use(cors());
 
-// set up sessions
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: 'false',
-  saveUninitialized: 'true'
-}));
 
 
 // set routes
